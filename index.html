@@ -1,214 +1,219 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>うるしの温度 – Urushi no Ondo –｜TOP</title>
-  <meta name="description" content="捨てずに継ぐ、美しさを未来へ。金継ぎと呼び継ぎの工藝ブランド「うるしの温度」のサイト。">
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-</head>
-
-<body class="page-home">
-
-  <!-- ヘッダー（共通） -->
-  <header class="site-header">
-    <div class="header-inner container">
-      <div class="site-logo">
-        <a href="index.html">
-          <span class="logo-mark"></span>
-          <span class="logo-text">うるしの温度</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>うるしの温度 – Urushi no Ondo –｜TOP</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="./index.html">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span>うるしの温度</span>
         </a>
+        <nav class="nav">
+          <a href="./index.html" class="is-active">TOP</a>
+          <a href="./repair.html">REPAIR</a>
+          <a href="./accessory.html">ACCESSORY</a>
+          <a href="./contact.html">CONTACT</a>
+        </nav>
+        <button
+          id="js-hamburger"
+          class="hamburger"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          type="button"
+        >
+          <span aria-hidden="true"></span>
+        </button>
       </div>
+    </header>
 
-      <!-- ハンバーガー -->
-      <button class="nav-toggle" aria-expanded="false" aria-controls="global-nav">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-
-      <nav id="global-nav" class="global-nav">
-        <ul>
-          <li><a href="index.html" class="is-current">TOP</a></li>
-          <li><a href="repair.html">REPAIR</a></li>
-          <li><a href="accessory.html">ACCESSORY</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- HERO：3枚ふんわりフェード -->
-    <section class="hero hero-top">
-      <div class="hero-bg hero-swiper swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide hero-slide hero-slide-kintsugi"></div>
-          <div class="swiper-slide hero-slide hero-slide-yobitsugi"></div>
-          <div class="swiper-slide hero-slide hero-slide-accessory"></div>
+    <!-- Drawer (共通) -->
+    <div id="js-drawerOverlay" class="drawer-overlay" aria-hidden="true"></div>
+    <aside
+      id="js-drawer"
+      class="drawer"
+      aria-hidden="true"
+      aria-label="スマホメニュー"
+    >
+      <div class="drawer__head">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span>うるしの温度</span>
         </div>
+        <button
+          id="js-drawerClose"
+          class="drawer__close"
+          aria-label="メニューを閉じる"
+          type="button"
+        >
+          ×
+        </button>
       </div>
-
-      <div class="hero-inner container">
-        <div class="hero-copy">
-          <p class="hero-label">Urushi &amp; Kintsugi</p>
-          <h1 class="hero-title">
-            うるしの温度<br>
-            <span>– Urushi no Ondo –</span>
-          </h1>
-          <p class="hero-text">
-            捨てずに継ぐ、美しさを未来へ。<br>
-            金継ぎと呼び継ぎの工藝ブランドサイト。
-          </p>
-        </div>
-      </div>
-
-      <!-- スクロール矢印 -->
-      <button class="scroll-indicator js-scroll-down" aria-label="下へスクロール">
-        <span class="scroll-label">scroll</span>
-        <span class="scroll-arrow"></span>
-      </button>
-    </section>
-
-    <!-- CONCEPT -->
-    <section class="section concept" id="concept">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-line"></span>
-          <h2 class="section-title">CONCEPT</h2>
-          <span class="section-line"></span>
-        </div>
-        <p class="concept-lead">
-          捨てずに継ぐ、美しさを未来へ。
-        </p>
-        <p class="concept-text">
-          割れた器の欠片を拾い、金の線で継ぎ、<br>
-          異素材の欠片を呼び寄せて再構築する。<br>
-          うるしの温度は、金継ぎと呼び継ぎを通して、<br>
-          循環する美しさと、受け継ぐ文化を伝えます。
-        </p>
-      </div>
-    </section>
-
-    <!-- WORKS：横長スライダー -->
-    <section class="section works">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-line"></span>
-          <h2 class="section-title">WORKS</h2>
-          <span class="section-line"></span>
-        </div>
-
-        <div class="works-swiper swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="img-box img-works-kintsugi"></div>
-              <div class="works-caption">
-                <p class="works-title">― 金継ぎ ―</p>
-                <p class="works-text">欠けや割れた器を、次の物語へ継ぐ。</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="img-box img-works-yobitsugi"></div>
-              <div class="works-caption">
-                <p class="works-title">― 呼び継ぎ ―</p>
-                <p class="works-text">異素材を呼び寄せて継ぎ、新しい景色に。</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="img-box img-works-modern"></div>
-              <div class="works-caption">
-                <p class="works-title">― 現代漆 ―</p>
-                <p class="works-text">暮らしに寄り添う軽やかな漆のアクセサリー。</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- REPAIR リンク -->
-    <section class="section section-link section-link-repair">
-      <div class="container section-link-inner">
-        <div class="section-link-img">
-          <div class="img-box img-link-repair"></div>
-        </div>
-        <div class="section-link-text">
-          <h2 class="section-link-title">REPAIR</h2>
-          <p class="section-link-lead">金継ぎ・呼び継ぎの修復例。</p>
-          <p class="section-link-desc">
-            Before / After の写真から、継ぐことで生まれる新しい表情をご覧いただけます。
-          </p>
-          <a href="repair.html" class="btn btn-main">VIEW MORE</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACCESSORY リンク -->
-    <section class="section section-link section-link-accessory">
-      <div class="container section-link-inner section-link-reverse">
-        <div class="section-link-img">
-          <div class="img-box img-link-accessory"></div>
-        </div>
-        <div class="section-link-text">
-          <h2 class="section-link-title">ACCESSORY</h2>
-          <p class="section-link-lead">継がれたかたち。</p>
-          <p class="section-link-desc">
-            陶器と石、ガラスと木など、異素材を組み合わせた呼び継ぎアクセサリーのコレクション。
-          </p>
-          <a href="accessory.html" class="btn btn-main">VIEW MORE</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT リンク -->
-    <section class="section section-cta">
-      <div class="container">
-        <h2 class="section-title">CONTACT / REQUEST</h2>
-        <p class="section-cta-text">
-          修繕のご相談やアクセサリーに関するお問い合わせは、<br>
-          CONTACT ページのフォームより承っております。
-        </p>
-        <a href="contact.html" class="btn btn-main">CONTACT ページへ</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- フッター（共通） -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="logo-mark logo-mark-sm"></span>
-        <span class="footer-logo-text">うるしの温度 – Urushi no Ondo –</span>
-      </div>
-      <div class="footer-nav">
+      <nav class="drawer-nav">
         <a href="index.html">TOP</a>
         <a href="repair.html">REPAIR</a>
         <a href="accessory.html">ACCESSORY</a>
         <a href="contact.html">CONTACT</a>
-      </div>
-      <div class="footer-sns">
-        <a href="#">Instagram</a>
-      </div>
-      <p class="footer-copy">© Urushi no Ondo</p>
-    </div>
-  </footer>
+      </nav>
+    </aside>
 
-  <!-- TOPへ戻る -->
-  <button class="page-top js-page-top" aria-label="ページの先頭へ">
-    <span>TOP</span>
-  </button>
+    <!-- TOP HERO -->
+    <section class="hero-top">
+      <img
+        id="js-heroA"
+        class="hero-bg is-active"
+        src="./images/top01.png"
+        alt="トップヒーロー画像"
+      />
+      <img
+        id="js-heroB"
+        class="hero-bg"
+        src="./images/top02.png"
+        alt=""
+        aria-hidden="true"
+      />
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="js/script.js"></script>
-</body>
+      <div class="hero-top__inner">
+        <div>
+          <div class="hero-eyebrow">Urushi &amp; Kintsugi</div>
+          <h1 class="hero-title">うるしの温度</h1>
+          <p class="hero-sub">捨てずに継ぐ、美しさを未来へ。</p>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-pill">scroll</div>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <h2 class="section-title"><span class="hr-title">CONCEPT</span></h2>
+        <p class="lead">
+          捨てずに継ぐ、美しさを未来へ。<br /><br />
+          漆器の修復技法である金継ぎ・呼び継ぎの魅力を発信し、
+          “捨てずに継ぐ”というエコロジー的価値観と割れたから得られる美しさを発信していきます。
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <h2 class="section-title"><span class="hr-title">WORKS</span></h2>
+
+        <div class="works-box" id="js-works">
+          <button
+            class="works-arrow works-arrow--prev"
+            type="button"
+            aria-label="前へ"
+          >
+            <span aria-hidden="true"></span>
+          </button>
+
+          <button
+            class="works-arrow works-arrow--next"
+            type="button"
+            aria-label="次へ"
+          >
+            <span aria-hidden="true"></span>
+          </button>
+
+          <img id="js-worksImg" src="./images/works01.png" alt="WORKS画像" />
+          <div id="js-worksCaption" class="works-caption">
+            — 呼び継ぎ —<br />異素材を呼び継ぐ
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPAIR -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <a
+              class="link-img"
+              href="./repair.html"
+              aria-label="REPAIRページへ"
+            >
+              <img src="./images/top04.png" alt="REPAIR画像（仮）" />
+            </a>
+          </div>
+          <div class="card">
+            <p class="kicker">Repair</p>
+            <h3 class="h2">REPAIR</h3>
+            <p>割れ・欠け・破損を修復し、新たな美しさを生み出す。</p>
+            <a class="btn" href="./repair.html">VIEW MORE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCESSORY -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          <div class="card">
+            <p class="kicker">Accessory</p>
+            <h3 class="h2">ACCESSORY</h3>
+            <p>異素材を組み合わせ、工芸を身近に楽しむ。</p>
+            <a class="btn" href="./accessory.html">VIEW MORE</a>
+          </div>
+          <div>
+            <a
+              class="link-img"
+              href="./accessory.html"
+              aria-label="ACCESSORYページへ"
+            >
+              <img src="./images/top05.png" alt="ACCESSORY画像（仮）" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="hr-title">CONTACT / REQUEST</span>
+        </h2>
+        <p class="lead">
+          作家へのご相談やアクセサリーに関するお問い合わせは、専用フォームより承っております。
+        </p>
+        <p style="text-align: center">
+          <a class="btn" href="./contact.html">Contact ページへ</a>
+        </p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div>◯ うるしの温度 – Urushi no Ondo –</div>
+        <div class="footer-links">
+          <a href="./repair.html">About</a>
+          <a href="./repair.html">Repair</a>
+          <a href="./accessory.html">Accessory</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <div><a href="#">Instagram</a></div>
+        <div style="margin-top: 8px">© Urushi no Ondo</div>
+      </div>
+    </footer>
+
+    <button
+      id="js-toTop"
+      class="to-top"
+      aria-label="トップへ戻る"
+      type="button"
+    >
+      <span>TOP</span>
+    </button>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
