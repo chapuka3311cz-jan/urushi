@@ -1,201 +1,230 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>うるしの温度 – Urushi no Ondo –｜REPAIR</title>
-  <meta name="description" content="金継ぎ・呼び継ぎの修復例と制作工程、作り手を紹介するページ。">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>うるしの温度 – Urushi no Ondo –｜REPAIR</title>
+    <meta
+      name="description"
+      content="金継ぎ・呼び継ぎの修繕依頼と制作について。"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-</head>
-
-<body class="page-repair">
-
-  <header class="site-header">
-    <div class="header-inner container">
-      <div class="site-logo">
-        <a href="index.html">
-          <span class="logo-mark"></span>
-          <span class="logo-text">うるしの温度</span>
+  <body>
+    <!-- Header (共通) -->
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="index.html" aria-label="うるしの温度 トップへ">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span>うるしの温度</span>
         </a>
+
+        <nav class="nav" aria-label="グローバルナビ">
+          <a href="index.html">TOP</a>
+          <a href="repair.html" class="is-active">REPAIR</a>
+          <a href="accessory.html">ACCESSORY</a>
+          <a href="contact.html">CONTACT</a>
+        </nav>
+
+        <button
+          id="js-hamburger"
+          class="hamburger"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          type="button"
+        >
+          <span aria-hidden="true"></span>
+        </button>
       </div>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="global-nav">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <nav id="global-nav" class="global-nav">
-        <ul>
-          <li><a href="index.html">TOP</a></li>
-          <li><a href="repair.html" class="is-current">REPAIR</a></li>
-          <li><a href="accessory.html">ACCESSORY</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>
-
-    <!-- HERO：左右分割 -->
-    <section class="hero hero-split hero-repair">
-      <div class="hero-split-left">
-        <div class="hero-copy">
-          <p class="hero-label">Urushi &amp; Kintsugi</p>
-          <h1 class="hero-title">
-            REPAIR<br>
-            <span>― 金継ぎ・呼び継ぎ ―</span>
-          </h1>
-          <p class="hero-text">
-            壊れた器を捨てずに継ぎ、<br>
-            次の時間へとつなぐ修復の記録。
-          </p>
+    <!-- Drawer (共通) -->
+    <div id="js-drawerOverlay" class="drawer-overlay" aria-hidden="true"></div>
+    <aside
+      id="js-drawer"
+      class="drawer"
+      aria-hidden="true"
+      aria-label="スマホメニュー"
+    >
+      <div class="drawer__head">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span>うるしの温度</span>
         </div>
+        <button
+          id="js-drawerClose"
+          class="drawer__close"
+          aria-label="メニューを閉じる"
+          type="button"
+        >
+          ×
+        </button>
       </div>
-      <div class="hero-split-right hero-repair-bg">
-        <!-- images/test04.jpg が当たる -->
-      </div>
-
-      <button class="scroll-indicator js-scroll-down" aria-label="下へスクロール">
-        <span class="scroll-label">scroll</span>
-        <span class="scroll-arrow"></span>
-      </button>
-    </section>
-
-    <!-- 金継ぎ -->
-    <section class="section repair-section">
-      <div class="container repair-block">
-        <div class="repair-text">
-          <h2 class="repair-heading">金継ぎ</h2>
-          <p class="repair-lead">欠けや割れを、金の線として生かす修復技法。</p>
-          <p class="repair-desc">
-            ひとつひとつ異なる破損のかたちに合わせ、漆で接着し、金粉で仕上げていきます。<br>
-            傷を隠すのではなく、物語としてすくい上げることを大切にしています。
-          </p>
-        </div>
-        <div class="repair-beforeafter">
-          <div class="ba-images">
-            <div class="ba-item">
-              <div class="img-box img-kintsugi-before"></div>
-              <p class="ba-label">BEFORE</p>
-            </div>
-            <div class="ba-arrow">›</div>
-            <div class="ba-item">
-              <div class="img-box img-kintsugi-after"></div>
-              <p class="ba-label">AFTER</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 呼び継ぎ -->
-    <section class="section repair-section">
-      <div class="container repair-block repair-block-reverse">
-        <div class="repair-text">
-          <h2 class="repair-heading">呼び継ぎ</h2>
-          <p class="repair-lead">失われた部分に、別の欠片を“呼び寄せて”継ぐ修復。</p>
-          <p class="repair-desc">
-            欠け落ちた部分に、異なる器や素材を呼び寄せるように継ぎ足していきます。<br>
-            異素材同士の出会いから、新しい景色が立ち上がります。
-          </p>
-        </div>
-        <div class="repair-beforeafter">
-          <div class="ba-images">
-            <div class="ba-item">
-              <div class="img-box img-yobitsugi-before"></div>
-              <p class="ba-label">BEFORE</p>
-            </div>
-            <div class="ba-arrow">›</div>
-            <div class="ba-item">
-              <div class="img-box img-yobitsugi-after"></div>
-              <p class="ba-label">AFTER</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- workflow -->
-    <section class="section repair-workflow">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-line"></span>
-          <h2 class="section-title">Repair workflow</h2>
-          <span class="section-line"></span>
-        </div>
-        <div class="workflow-steps">
-          <div class="workflow-step">
-            <div class="img-box img-workflow-1 img-box-small"></div>
-            <p class="workflow-step-title">STEP1</p>
-            <p class="workflow-step-text">テキストテキストテキスト。</p>
-          </div>
-          <div class="workflow-step">
-            <div class="img-box img-workflow-2 img-box-small"></div>
-            <p class="workflow-step-title">STEP2</p>
-            <p class="workflow-step-text">テキストテキストテキスト。</p>
-          </div>
-          <div class="workflow-step">
-            <div class="img-box img-workflow-3 img-box-small"></div>
-            <p class="workflow-step-title">STEP3</p>
-            <p class="workflow-step-text">テキストテキストテキスト。</p>
-          </div>
-          <div class="workflow-step">
-            <div class="img-box img-workflow-4 img-box-small"></div>
-            <p class="workflow-step-title">STEP4</p>
-            <p class="workflow-step-text">テキストテキストテキスト。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CREATOR -->
-    <section class="section creator">
-      <div class="container creator-inner">
-        <div class="creator-image">
-          <div class="img-box img-creator"></div>
-        </div>
-        <div class="creator-text">
-          <h2 class="creator-heading">CREATOR</h2>
-          <p class="creator-name">荒川 やす子<br><span>Arakawa Yasuko</span></p>
-          <p class="creator-title">金継ぎ職人 / 現代漆工芸作家</p>
-          <p class="creator-desc">
-            テキストテキストテキストテキストテキストテキスト。<br>
-            テキストテキストテキストテキストテキストテキスト。<br>
-            テキストテキストテキストテキストテキストテキスト。
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="logo-mark logo-mark-sm"></span>
-        <span class="footer-logo-text">うるしの温度 – Urushi no Ondo –</span>
-      </div>
-      <div class="footer-nav">
+      <nav class="drawer-nav">
         <a href="index.html">TOP</a>
         <a href="repair.html">REPAIR</a>
         <a href="accessory.html">ACCESSORY</a>
         <a href="contact.html">CONTACT</a>
-      </div>
-      <div class="footer-sns">
-        <a href="#">Instagram</a>
-      </div>
-      <p class="footer-copy">© Urushi no Ondo</p>
-    </div>
-  </footer>
+      </nav>
+    </aside>
 
-  <button class="page-top js-page-top" aria-label="ページの先頭へ">
-    <span>TOP</span>
-  </button>
+    <main>
+      <!-- HERO：金継ぎ演出 -->
+      <section class="hero-kintsugi" aria-label="REPAIR ヒーロー">
+        <div class="hero-kintsugi__top">
+          <div class="hero-kintsugi__inner">
+            <p class="hero-kintsugi__en">Urushi &amp; Kintsugi</p>
+            <h1 class="hero-kintsugi__title">REPAIR</h1>
+            <p class="hero-kintsugi__jp">— 金継ぎ・呼継ぎ —</p>
+            <p class="hero-kintsugi__desc">新たらしい美しさ。</p>
+          </div>
+        </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="js/script.js"></script>
-</body>
+        <div class="hero-kintsugi__bottom" aria-hidden="true">
+          <img src="images/repair-hero.png" alt="修繕の写真（仮）" />
+        </div>
+
+        <div class="hero-kintsugi__seam" aria-hidden="true"></div>
+
+        <a
+          href="#repair"
+          class="scroll-indicator scroll-indicator--center"
+          aria-label="修繕の説明へスクロール"
+        >
+          <div class="scroll-indicator__pill">scroll</div>
+          <div class="scroll-indicator__arrow" aria-hidden="true"></div>
+        </a>
+      </section>
+
+      <!-- Repair: Kintsugi -->
+      <section id="repair" class="section">
+        <div class="container">
+          <div class="grid-2 grid-2--repair">
+            <div class="card">
+              <h2 class="h2" style="margin-top: 0">金継ぎ</h2>
+              <p>美しく、つなぐ。</p>
+              <p class="note">破損部を金や漆で装飾します。</p>
+            </div>
+
+            <div class="ba ba--single">
+              <img
+                class="ba-single-img"
+                src="images/ba_kintsugi.png"
+                alt="金継ぎ BEFORE/AFTER（セット画像）"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Repair: Yobitsugi（交互） -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="grid-2 grid-2--repair grid-2--reverse">
+            <div class="card">
+              <h2 class="h2" style="margin-top: 0">呼び継ぎ</h2>
+              <p>異素材の融合。</p>
+              <p class="note">欠損した部分を異素材で再生します。</p>
+            </div>
+
+            <div class="ba ba--single">
+              <img
+                class="ba-single-img"
+                src="images/ba_yobitsugi.png"
+                alt="呼び継ぎ BEFORE/AFTER（セット画像）"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workflow -->
+      <section class="section section--tight">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="hr-title">Repair workflow</span>
+          </h2>
+
+          <div class="workflow">
+            <div class="step">
+              <img src="images/step01.png" alt="STEP1（仮）" />
+              <h4>STEP 1</h4>
+              <p>破損した器をお持ちいただきます。</p>
+            </div>
+            <div class="step">
+              <img src="images/step02.png" alt="STEP2（仮）" />
+              <h4>STEP 2</h4>
+              <p>依頼主様と打ち合わせし、金継または呼び継ぎ作業に入ります。</p>
+            </div>
+            <div class="step">
+              <img src="images/step03.png" alt="STEP3（仮）" />
+              <h4>STEP 3</h4>
+              <p>金継完了後、蒔絵での装飾も可能です</p>
+            </div>
+            <div class="step">
+              <img src="images/step04.png" alt="STEP4（仮）" />
+              <h4>STEP 4</h4>
+              <p>厳重に梱包後、配送いたします</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Creator（左右） -->
+      <section class="section">
+        <div class="container">
+          <div class="creator">
+            <div class="creator__img">
+              <img src="images/creator.png" alt="制作者写真（仮）" />
+            </div>
+
+            <div class="creator__text">
+              <h2
+                class="section-title section-title--left"
+                style="margin: 0 0 12px"
+              >
+                <span class="hr-title">CREATOR</span>
+              </h2>
+              <p class="name">荒川 やす子</p>
+              <p class="roman">ArakawaYasuko</p>
+              <p class="role">金継ぎ職人 / 現代漆工藝作家</p>
+              <p class="creator__desc">
+                桃花工芸大学 工芸部 漆修復科卒業。<br />
+                2020年より日本橋三越にて<br />
+                年１回個展を開催。<br />
+                金継ぎ教室を不定期開催し、漆工芸を広く発信している。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (共通) -->
+    <footer class="site-footer">
+      <div class="container">
+        <div>◯ うるしの温度 – Urushi no Ondo –</div>
+        <div class="footer-links">
+          <a href="repair.html">About</a>
+          <a href="repair.html">Repair</a>
+          <a href="accessory.html">Accessory</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div><a href="#" aria-label="Instagram（仮）">Instagram</a></div>
+        <div style="margin-top: 8px">© Urushi no Ondo</div>
+      </div>
+    </footer>
+
+    <button
+      id="js-toTop"
+      class="to-top"
+      aria-label="トップへ戻る"
+      type="button"
+    >
+      <span>TOP</span>
+    </button>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
