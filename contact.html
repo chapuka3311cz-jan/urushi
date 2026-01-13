@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>うるしの温度 – Urushi no Ondo –｜CONTACT</title>
+    <meta name="description" content="お問い合わせ・修繕依頼フォーム。" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header (共通) -->
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="index.html" aria-label="うるしの温度 トップへ">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span>うるしの温度</span>
+        </a>
+
+        <nav class="nav" aria-label="グローバルナビ">
+          <a href="index.html">TOP</a>
+          <a href="repair.html">REPAIR</a>
+          <a href="accessory.html">ACCESSORY</a>
+          <a href="contact.html" class="is-active">CONTACT</a>
+        </nav>
+
+        <button
+          id="js-hamburger"
+          class="hamburger"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Drawer (共通) -->
+    <div id="js-drawerOverlay" class="drawer-overlay" aria-hidden="true"></div>
+    <aside
+      id="js-drawer"
+      class="drawer"
+      aria-hidden="true"
+      aria-label="スマホメニュー"
+    >
+      <div class="drawer__head">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span>うるしの温度</span>
+        </div>
+        <button
+          id="js-drawerClose"
+          class="drawer__close"
+          aria-label="メニューを閉じる"
+        >
+          ×
+        </button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="index.html">TOP</a>
+        <a href="repair.html">REPAIR</a>
+        <a href="accessory.html">ACCESSORY</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </aside>
+
+    <main class="section">
+      <div class="container">
+        <h1 style="font-size: 52px; letter-spacing: 0.1em; margin: 0 0 10px">
+          CONTACT
+        </h1>
+
+        <p class="lead" style="margin-bottom: 26px">
+          お問い合わせへのご返信には、1-2営業日いただいております。<br />
+          営業時間外にいただいたお問い合わせについては、翌営業日以降にご返信いたしますので、お待ちいただきますようお願い申し上げます。
+        </p>
+
+        <div class="contact-wrap">
+          <form id="js-contactForm" class="form" novalidate>
+            <div class="form-row">
+              <div class="label">お問い合わせ内容</div>
+              <div>
+                <select class="select" name="type" required>
+                  <option value="">選択してください</option>
+                  <option value="kintsugi">金継ぎ依頼</option>
+                  <option value="yobitsugi">呼び継ぎ依頼</option>
+                  <option value="accessory">アクセサリーについて</option>
+                  <option value="other">その他</option>
+                </select>
+                <p class="help" data-error-for="type">
+                  内容を選択してください。
+                </p>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="label">お名前</div>
+              <div>
+                <input
+                  class="input"
+                  type="text"
+                  name="name"
+                  placeholder="お名前をご記入ください"
+                  required
+                />
+                <p class="help" data-error-for="name">
+                  お名前をご記入ください。
+                </p>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="label">メールアドレス<span class="req">※</span></div>
+              <div>
+                <input
+                  class="input"
+                  type="email"
+                  name="email"
+                  placeholder="sample@mail.com"
+                  required
+                />
+                <p class="help" data-error-for="email">
+                  正しいメールアドレスを入力してください。
+                </p>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="label">内容<span class="req">※</span></div>
+              <div>
+                <textarea
+                  class="textarea"
+                  name="message"
+                  placeholder="お問い合わせ内容をご記入ください"
+                  required
+                ></textarea>
+                <p class="help" data-error-for="message">
+                  内容をご記入ください。
+                </p>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="submit" type="submit">送信</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer (共通) -->
+    <footer class="site-footer">
+      <div class="container">
+        <div>◯ うるしの温度 – Urushi no Ondo –</div>
+        <div class="footer-links">
+          <a href="repair.html">About</a>
+          <a href="repair.html">Repair</a>
+          <a href="accessory.html">Accessory</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div><a href="#" aria-label="Instagram（仮）">Instagram</a></div>
+        <div style="margin-top: 8px">© Urushi no Ondo</div>
+      </div>
+    </footer>
+
+    <!-- Back to top (共通) -->
+    <button id="js-toTop" class="to-top" aria-label="トップへ戻る">
+      <span>TOP</span>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script>
+      "use strict";
+
+      const form = document.getElementById("js-contactForm");
+      if (form) {
+        const showError = (name, show) => {
+          const el = document.querySelector(`[data-error-for="${name}"]`);
+          if (!el) return;
+          el.style.display = show ? "block" : "none";
+        };
+
+        const validators = {
+          type: (v) => v.trim().length > 0,
+          name: (v) => v.trim().length > 0,
+          email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+          message: (v) => v.trim().length > 0,
+        };
+
+        const check = () => {
+          const data = new FormData(form);
+          let ok = true;
+
+          for (const key of Object.keys(validators)) {
+            const val = String(data.get(key) || "");
+            const valid = validators[key](val);
+            showError(key, !valid);
+            if (!valid) ok = false;
+          }
+          return ok;
+        };
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const ok = check();
+          if (ok) {
+            alert(
+              "送信（ダミー）: 入力OKです。※課題提出用のため実送信は行いません。"
+            );
+            form.reset();
+            ["type", "name", "email", "message"].forEach((k) =>
+              showError(k, false)
+            );
+          }
+        });
+
+        // 入力中にも消えるように
+        form.addEventListener("input", () => {
+          check();
+        });
+      }
+    </script>
+  </body>
+  <button id="js-toTop" class="to-top" aria-label="トップへ戻る" type="button">
+    <span>TOP</span>
+  </button>
+  <script src="js/main.js"></script>
+</html>

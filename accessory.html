@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>うるしの温度 – Urushi no Ondo –｜ACCESSORY</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="./index.html">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span>うるしの温度</span>
+        </a>
+        <nav class="nav">
+          <a href="./index.html">TOP</a>
+          <a href="./repair.html">REPAIR</a>
+          <a href="./accessory.html" class="is-active">ACCESSORY</a>
+          <a href="./contact.html">CONTACT</a>
+        </nav>
+        <button
+          id="js-hamburger"
+          class="hamburger"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          type="button"
+        >
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Drawer (共通) -->
+    <div id="js-drawerOverlay" class="drawer-overlay" aria-hidden="true"></div>
+    <aside
+      id="js-drawer"
+      class="drawer"
+      aria-hidden="true"
+      aria-label="スマホメニュー"
+    >
+      <div class="drawer__head">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span>うるしの温度</span>
+        </div>
+        <button
+          id="js-drawerClose"
+          class="drawer__close"
+          aria-label="メニューを閉じる"
+          type="button"
+        >
+          ×
+        </button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="index.html">TOP</a>
+        <a href="repair.html">REPAIR</a>
+        <a href="accessory.html">ACCESSORY</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </aside>
+
+    <!-- HERO：金継ぎ演出 -->
+    <section class="hero-kintsugi" aria-label="ACCESSORY ヒーロー">
+      <div class="hero-kintsugi__top">
+        <div class="hero-kintsugi__inner">
+          <p class="hero-kintsugi__en">Urushi &amp; Kintsugi</p>
+          <h1 class="hero-kintsugi__title">ACCESSORY</h1>
+          <p class="hero-kintsugi__jp">— アクセサリー —</p>
+          <p class="hero-kintsugi__desc">伝統工芸を日常に。</p>
+        </div>
+      </div>
+
+      <div class="hero-kintsugi__bottom" aria-hidden="true">
+        <img
+          src="./images/accessory-hero.jpg"
+          alt="アクセサリーヒーロー画像（仮）"
+        />
+      </div>
+
+      <div class="hero-kintsugi__seam" aria-hidden="true"></div>
+
+      <a
+        href="#acc"
+        class="scroll-indicator scroll-indicator--center"
+        aria-label="商品一覧へスクロール"
+      >
+        <div class="scroll-indicator__pill">scroll</div>
+        <div class="scroll-indicator__arrow" aria-hidden="true"></div>
+      </a>
+    </section>
+
+    <section id="acc" class="section">
+      <div class="container">
+        <h2 class="product-section-title">
+          <span class="hr-title">陶器 × 石</span>
+        </h2>
+        <div class="products">
+          <div class="product">
+            <img src="./images/acc01.jpg" alt="商品1（仮）" />
+            <p class="pname">- 磁器とオニキスの螺鈿仕上げ -</p>
+            <p class="price">¥ 15,000</p>
+          </div>
+          <div class="product">
+            <img src="./images/acc02.jpg" alt="商品2（仮）" />
+            <p class="pname">- 磁器とオニキス -</p>
+            <p class="price">¥ 15,000</p>
+          </div>
+          <div class="product">
+            <img src="./images/acc03.jpg" alt="商品3（仮）" />
+            <p class="pname">- 蒔絵箱・御影石 -</p>
+            <p class="price">¥ 15,000</p>
+          </div>
+          <div class="product">
+            <img src="./images/acc04.jpg" alt="商品4（仮）" />
+            <p class="pname">- 九谷焼・庵治石・螺鈿仕上げ -</p>
+            <p class="price">¥ 15,000</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <h2 class="product-section-title">
+          <span class="hr-title">ガラス × 木</span>
+        </h2>
+        <div class="products">
+          <div class="product">
+            <img src="./images/acc05.jpg" alt="商品5（仮）" />
+            <p class="pname">- シーグラスとバーチ材、庵治石 -</p>
+            <p class="price">¥ 15,000</p>
+          </div>
+          <div class="product">
+            <img src="./images/acc06.jpg" alt="商品6（仮）" />
+            <p class="pname">- シーグラスとメープル材 -</p>
+            <p class="price">¥ 15,000</p>
+          </div>
+          <div class="product">
+            <img src="./images/acc07.jpg" alt="商品7（仮）" />
+            <p class="pname">- シーグラスとクルミ材 -</p>
+            <p class="price">¥ 15,000</p>
+          </div>
+          <div class="product">
+            <img src="./images/acc08.jpg" alt="商品8（仮）" />
+            <p class="pname">- ガラス瓶と廃木材 -</p>
+            <p class="price">¥ 15,000</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div>◯ うるしの温度 – Urushi no Ondo –</div>
+        <div class="footer-links">
+          <a href="./repair.html">About</a>
+          <a href="./repair.html">Repair</a>
+          <a href="./accessory.html">Accessory</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <div><a href="#">Instagram</a></div>
+        <div style="margin-top: 8px">© Urushi no Ondo</div>
+      </div>
+    </footer>
+
+    <button
+      id="js-toTop"
+      class="to-top"
+      aria-label="トップへ戻る"
+      type="button"
+    >
+      <span>TOP</span>
+    </button>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
